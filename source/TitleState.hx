@@ -28,12 +28,12 @@ using StringTools;
 
 #if desktop
 import Discord.DiscordClient;
+#end
 import Sys;
 import openfl.display.BitmapData;
 import polymod.Polymod.Framework;
 import polymod.Polymod.PolymodError;
 import sys.FileSystem;
-#end
 
 #if GAMEJOLT_ALLOWED
 import gamejolt.GJClient;
