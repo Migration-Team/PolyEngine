@@ -122,6 +122,7 @@
 	<haxelib name="flixel-ui" />
 	<haxelib name="polymod"/>
 	<haxelib name="discord_rpc" if="desktop || android" />
+	<haxelib name="hxCodec" if="desktop || android" />
 	<haxelib name="extension-androidtools" if="android"/>
 	<haxelib name="flixel-studio" if="debug" />
 	<haxelib name="systools" if="desktop" />
@@ -138,6 +139,9 @@
 	<!--Disable the Flixel core debugger. Automatically gets set whenever you compile in release mode!-->
 	<haxedef name="FLX_NO_DEBUG" unless="debug" />
 
+	<!-- LibVLC Logging for hxCodec -->
+	<haxedef name="HXC_LIBVLC_LOGGING" if="debug" />
+		
 	<!--Enable this for Nape release builds for a serious peformance improvement-->
 	<haxedef name="NAPE_RELEASE_BUILD" unless="debug" />
 
