@@ -15,11 +15,9 @@ class VideoHandler
 	public static var video:Video;
 	public static var netStream:NetStream;
 	public static var finishCallback:FlxState;
-
-	#if desktop
 	public static var vlcBitmap:VlcBitmap;
-	#end
 
+	
 	public function new()
 	{
 		FlxG.autoPause = false;
