@@ -41,7 +41,7 @@ class Paths
 				return levelPath;
 		}
 
-		return getPreloadPath(file);
+		return SUtil.getPath() + getPreloadPath(file);
 	}
 
 	static public function getLibraryPath(file:String, library = "preload")
