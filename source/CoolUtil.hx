@@ -55,7 +55,7 @@ class CoolUtil
 	}
 
 	// These functions below can be very useful for many things (GamerPablito)
-】
+
 	inline public static function browserLoad(site:String) {
 		#if linux
 		Sys.command('/usr/bin/xdg-open', [site]);
