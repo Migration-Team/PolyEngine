@@ -5,7 +5,9 @@ import flixel.FlxState;
 import openfl.events.Event;
 import openfl.media.Video;
 import openfl.net.NetStream;
+#if desktop
 import systools.Dialogs;
+#end
 import vlc.VlcBitmap;
 
 // THIS IS FOR TESTING
@@ -15,7 +17,7 @@ class VideoHandler
 	public static var video:Video;
 	public static var netStream:NetStream;
 	public static var finishCallback:FlxState;
-	public static var vlcBitmap:VlcBitmap;
+	public var vlcBitmap:VlcBitmap;
 
 	
 	public function new()
