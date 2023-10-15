@@ -24,20 +24,24 @@ import openfl.Assets;
 import openfl.Lib;
 import openfl.filters.ShaderFilter;
 
-using StringTools;
-
 #if desktop
 import Discord.DiscordClient;
 #end
+	
+#if sys
 import Sys;
 import openfl.display.BitmapData;
 import polymod.Polymod.Framework;
 import polymod.Polymod.PolymodError;
 import sys.FileSystem;
+#end
 
 #if GAMEJOLT_ALLOWED
 import gamejolt.GJClient;
 #end
+	
+using StringTools;
+
 
 class TitleState extends MusicBeatState
 {
