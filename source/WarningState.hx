@@ -54,6 +54,30 @@ class WarningState extends MusicBeatState
 				MusicBeatState.switchState(new TitleState());
 			});
 		}
+		if (FlxG.keys.justPressed.TAB)
+		{
+			FlxG.camera.flash(FlxColor.WHITE, 1);
+
+			FlxG.camera.fade(FlxColor.BLACK, 0.33, true);
+			FlxG.sound.play(Paths.sound('confirmMenu'), 1.0);
+
+			new FlxTimer().start(1, function(tmr:FlxTimer)
+			{
+				var diamond:FlxGraphic = FlxGraphic.fromClass(GraphicTransTileDiamond);
+				diamond.persist = true;
+				diamond.destroyOnNoUse = false;
+
+				FlxTransitionableState.defaultTransIn = new TransitionData(FADE, FlxColor.BLACK, 1, new FlxPoint(0, -1),
+					{asset: diamond, width: 32, height: 32}, new FlxRect(-200, -200, FlxG.width * 1.4, FlxG.height * 1.4));
+				FlxTransitionableState.defaultTransOut = new TransitionData(FADE, FlxColor.BLACK, 0.7, new FlxPoint(0, 1),
+					{asset: diamond, width: 32, height: 32}, new FlxRect(-200, -200, FlxG.width * 1.4, FlxG.height * 1.4));
+
+				transIn = FlxTransitionableState.defaultTransIn;
+				transOut = FlxTransitionableState.defaultTransOut;
+
+				MusicBeatState.switchState(new MainMenuState());
+			});
+		}
 
 		super.update(elapsed);
 	}
