@@ -55,7 +55,15 @@ class CoolUtil
 	}
 
 	// These functions below can be very useful for many things (GamerPablito)
-
+】
+	inline public static function browserLoad(site:String) {
+		#if linux
+		Sys.command('/usr/bin/xdg-open', [site]);
+		#else
+		FlxG.openURL(site);
+		#end
+	}
+	
 	public static function slideEffect(amplitude:Float, calcMethod:SlideCalcMethod, slowness:Float = 1, delayIndex:Float = 0, ?offset:Float):Float
 	{
 		if (slowness > 0)
